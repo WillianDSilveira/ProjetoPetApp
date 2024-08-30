@@ -1,5 +1,6 @@
 package com.example.petapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -22,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void logar(View view) {
         // Pegando os compenentes da interface grafica
-        EditText login = findViewById(R.id.editTextLogin);
+        EditText login = findViewById(R.id.editTextLogin); // R = Resourse
         EditText senha = findViewById(R.id.editTextSenha);
 
         // Pegando o conteudo da caixa de login
@@ -40,6 +41,8 @@ public class LoginActivity extends AppCompatActivity {
 
         if(conteudoLogin.equals("admin") && conteudoSenha.equals("123")){
             // Acessar dashboard
+            Intent intent = new Intent(this,DashboardActivity.class);
+            startActivity(intent);
         }else{
             Toast.makeText(this, "Usuario ou Senha INVALIDO", Toast.LENGTH_SHORT).show();
             return;

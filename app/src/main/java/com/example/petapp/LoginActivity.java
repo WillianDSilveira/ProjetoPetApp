@@ -12,13 +12,17 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        setTitle("Login");
     }
 
     public void logar(View view) {
@@ -39,9 +43,14 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        if(conteudoLogin.equals("admin") && conteudoSenha.equals("123")){
+        List<String> listaLogin = Arrays.asList("admin", "marcelo", "willian", "joao");
+
+        if(listaLogin.contains(conteudoLogin) && conteudoSenha.equals("123")){
             // Acessar dashboard
+            Bundle bundle = new Bundle();
+            bundle.putString("login", conteudoLogin);
             Intent intent = new Intent(this,DashboardActivity.class);
+            intent.putExtras(bundle);
             startActivity(intent);
         }else{
             Toast.makeText(this, "Usuario ou Senha INVALIDO", Toast.LENGTH_SHORT).show();

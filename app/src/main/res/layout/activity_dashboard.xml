@@ -7,4 +7,32 @@
     android:layout_height="match_parent"
     tools:context=".DashboardActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <Button
+            android:id="@+id/CadastroPet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="Cadastro"
+            android:text="Cadastro Pet" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="Listagem"
+            android:text="Listagem Pet" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_cusco_background" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

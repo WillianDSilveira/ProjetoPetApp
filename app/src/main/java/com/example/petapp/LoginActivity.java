@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login); // Vincula com o xml
         setTitle("Login");
     }
 
@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         String conteudoSenha = senha.getText().toString();
 
         if(conteudoLogin.isEmpty()){
-            Toast.makeText(this, "prencher o campo login", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "prencher o campo login", Toast.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      LENGTH_SHORT).show();
             return;
         }
         if(conteudoSenha.isEmpty()){

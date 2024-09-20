@@ -5,14 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import java.util.ArrayList;
 
 public class DashboardActivity extends AppCompatActivity {
 
+    ArrayList<Pet> listaPet = new ArrayList<Pet>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,13 +23,42 @@ public class DashboardActivity extends AppCompatActivity {
         setTitle("Dashboard");
     }
 
-    public void Cadastro(View view) {
-        Intent intent = new Intent(this,CadastroPetActivity.class);
+    public void cadastroPet(View view) {
+        Bundle bundle = new Bundle();// Cria mochila
+        bundle.putSerializable("lista_pet", listaPet); // joga a lista dentro da mochila
+        Intent intent = new Intent(this,
+                CadastroPetActivity.class);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 
-    public void Listagem(View view) {
-        Intent intent = new Intent(this,ListagemPetActivity.class);
+    public void listagemPet(View view) {
+        // Bundle=Mochila
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("lista_pet", listaPet);
+        Intent intent = new Intent(this,
+                ListagemPetActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+    public void removerPet(View view) {
+        // Bundle=Mochila
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("lista_pet", listaPet);
+        Intent intent = new Intent(this,
+                RemoverPetActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+    public void atualizarPet(View view) {
+        // Bundle=Mochila
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("lista_pet", listaPet);
+        Intent intent = new Intent(this,
+                AtualizarPetActivity.class);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 }
